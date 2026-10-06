@@ -3,6 +3,7 @@ package personnages;
 public class Gaulois {
     private String nom;
     private int force;
+    private int effetPotion=1;
 
     public Gaulois(String nom, int force) {
         this.nom = nom;
@@ -37,5 +38,8 @@ public class Gaulois {
 		romain.recevoirCoup(force / 3);
 	}
     
+	public void boirePotion(int forcePotion) {
+        effetPotion = forcePotion;
+    }
 }
 
