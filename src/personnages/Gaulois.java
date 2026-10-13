@@ -22,12 +22,6 @@ public class Gaulois {
 		return "Le Gaulois " + nom + " : ";
 	}
 
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		Gaulois asterix = new Gaulois("Asterix", 8);
-		System.out.println(asterix);
-	}
-
 	@Override
 	public String toString() {
 		return nom;
@@ -45,5 +39,10 @@ public class Gaulois {
 
 	public void boirePotion(int forcePotion) {
 		effetPotion = forcePotion;
+	}
+	
+	public static void main(String[] args) {
+		Gaulois asterix = new Gaulois("Asterix", 8);
+		System.out.println(asterix);
 	}
 }
