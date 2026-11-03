@@ -12,7 +12,7 @@ public class Village {
 		this.nom = nom;
 		this.chef = chef;
 		this.villageois = new Gaulois[nbVillageoisMax];
-
+		
 		chef.setVillage(this);
 	}
 
@@ -35,7 +35,7 @@ public class Village {
 	}
 
 	public Gaulois trouverVillageois(int numVillageois) {
-		if (numVillageois >= 1 && numVillageois <= nbVillageois) {
+		if (numVillageois > 0 && numVillageois < nbVillageois + 1) {
 			return villageois[numVillageois - 1];
 		}
 
