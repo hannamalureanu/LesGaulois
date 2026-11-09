@@ -24,20 +24,83 @@ public class Scenario {
 		minus.sEquiper(Equipement.BOUCLIER);
 		minus.sEquiper(Equipement.CASQUE);
 		milexcus.sEquiper(Equipement.CASQUE);
-		minus.parler("UN GAU... UN GAUGAU...");
-		do {
-			asterix.frapper(minus);
-		} while (minus.getForce() > 0);
+
+		// PARTIE 4 - a
+
+		/*
+		 * minus.parler("UN GAU... UN GAUGAU...");
+		 * 
+		 * asterix.frapper(minus); asterix.frapper(minus); asterix.frapper(minus);
+		 */
+
+		// PARTIE 4 - b
+
+		/*
+		 * minus.parler("UN GAU... UN GAUGAU...");
+		 * 
+		 * int forceAvant;
+		 * 
+		 * do { forceAvant = minus.getForce(); asterix.frapper(minus);
+		 * 
+		 * } while (minus.getForce() > 0 && minus.getForce() != forceAvant);
+		 */
+
+		// PARTIE 4 - c
+
+		/*
+		 * minus.parler("UN GAU... UN GAUGAU...");
+		 * 
+		 * asterix.frapper(minus);
+		 */
+
+		// PARTIE 4 - d
 		
-//		PARTIE 5 : a decommenter
-//		milexcus.parler("UN GAU... UN GAUGAU...");
-//		do {
-//			obelix.frapper(milexcus);
-//		} while (milexcus.getForce() > 0);
+		/*
+		 * minus.parler("UN GAU... UN GAUGAU...");
+		 * 
+		 * asterix.frapper(minus);
+		 * 
+		 * minus.parler(
+		 * "Alors Asterix on fait moins le malin face à mon équipement, Hi ! Hi !" );
+		 * 
+		 * obelix.parler("Asterix, tu veux un peu d'aide ?");
+		 * 
+		 * obelix.frapper(minus);
+		 */
 
+		// PARTIE 4 - e
 
-//		Musee musee = new Musee();
-//		obelix.faireUneDonnation(musee);
+		/*
+		 * minus.parler("UN GAU... UN GAUGAU...");
+		 * 
+		 * asterix.frapper(minus); asterix.frapper(minus);
+		 * 
+		 * minus.parler(
+		 * "Alors Asterix on fait moins le malin face à mon équipement, Hi ! Hi !" );
+		 * 
+		 * obelix.parler("Asterix, tu veux un peu d'aide ?");
+		 * 
+		 * obelix.frapper(minus);
+		 */
+
+		// PARTIE 5 - Musée
+
+		/*
+		 * milexcus.parler("UN GAU... UN GAUGAU...");
+		 * 
+		 * do { obelix.frapper(milexcus);
+		 * 
+		 * } while (milexcus.getForce() > 0);
+		 * 
+		 * Musee musee = new Musee();
+		 * 
+		 * obelix.faireUneDonnation(musee);
+		 * 
+		 * // ========================================== // PARTIE 6 - Export OCaml //
+		 * ==========================================
+		 * 
+		 * System.out.println(musee.extraireInstructionsOCaml());
+		 */
 
 	}
 
