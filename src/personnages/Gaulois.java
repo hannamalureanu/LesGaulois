@@ -6,7 +6,6 @@ import village_gaulois.Musee;
 
 public class Gaulois {
 	private String nom;
-	// private int force;
 	private int effetPotion = 1;
 	private Village village;
 	private int force;
@@ -30,27 +29,9 @@ public class Gaulois {
 		System.out.println(prendreParole() + "\"" + texte + "\"");
 	}
 
-	/*
-	 * private String prendreParole() { return "Le Gaulois " + nom + " : "; }
-	 */
-
 	private String prendreParole() {
 		return "Le gaulois " + nom + " : ";
 	}
-
-	@Override
-	public String toString() {
-		return nom;
-	}
-
-	/*
-	 * public void frapper(Romain romain) { System.out.println(nom +
-	 * " envoie un grand coup dans la machoire de " + romain.getNom());
-	 * 
-	 * romain.recevoirCoup(force * effetPotion / 3);
-	 * 
-	 * if (effetPotion > 1) { effetPotion--; } }
-	 */
 
 	public void frapper(Romain romain) {
 		System.out.println(nom + " envoie un grand coup dans la mâchoire de " + romain.getNom());

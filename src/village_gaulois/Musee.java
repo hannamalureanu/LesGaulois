@@ -1,4 +1,3 @@
-
 package village_gaulois;
 
 import objets.Equipement;
