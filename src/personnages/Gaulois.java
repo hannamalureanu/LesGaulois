@@ -58,7 +58,7 @@ public class Gaulois {
 		effetPotion = forcePotion;
 	}
 
-	public void sePresenter() {
+	public void sePresenter() { // string builder
 		if (village == null) {
 			parler("Bonjour, je m'appelle " + nom + ". Je voyage de villages en villages.");
 		} else if (village.getChef() == this) {
@@ -69,22 +69,21 @@ public class Gaulois {
 	}
 
 	public void faireUneDonnation(Musee musee) {
-		if (nbTrophees == 0) {
-			return;
-		}
+		if (nbTrophees != 0) {
 
-		parler("Je donne au musee tous mes trophees :");
+			parler("Je donne au musee tous mes trophees :");
 
-		for (int i = 0; i < nbTrophees; i++) {
-			if (trophees[i] != null) {
-				System.out.println("- " + trophees[i].toString().toLowerCase());
+			for (int i = 0; i < nbTrophees; i++) {
+				if (trophees[i] != null) {
+					System.out.println("- " + trophees[i].toString().toLowerCase());
 
-				musee.donnerTrophees(this, trophees[i]);
-				trophees[i] = null;
+					musee.donnerTrophees(this, trophees[i]);
+					trophees[i] = null;
+				}
 			}
-		}
 
-		nbTrophees = 0;
+			nbTrophees = 0;
+		}
 	}
 
 	public static void main(String[] args) {
