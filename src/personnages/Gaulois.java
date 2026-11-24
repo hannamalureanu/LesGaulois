@@ -58,14 +58,18 @@ public class Gaulois {
 		effetPotion = forcePotion;
 	}
 
-	public void sePresenter() { // string builder
+	public void sePresenter() {
+		StringBuilder sb = new StringBuilder("Bonjour, je m'appelle ").append(nom).append(". ");
+
 		if (village == null) {
-			parler("Bonjour, je m'appelle " + nom + ". Je voyage de villages en villages.");
+			sb.append("Je voyage de villages en villages.");
 		} else if (village.getChef() == this) {
-			parler("Bonjour, je m'appelle " + nom + ". Je suis le chef le village : " + village.getNom() + ".");
+			sb.append("Je suis le chef le village : ").append(village.getNom()).append(".");
 		} else {
-			parler("Bonjour, je m'appelle " + nom + ". J'habite le village : " + village.getNom() + ".");
+			sb.append("J'habite le village : ").append(village.getNom()).append(".");
 		}
+
+		parler(sb.toString());
 	}
 
 	public void faireUneDonnation(Musee musee) {
@@ -75,8 +79,7 @@ public class Gaulois {
 
 			for (int i = 0; i < nbTrophees; i++) {
 				if (trophees[i] != null) {
-					System.out.println("- " + trophees[i].toString().toLowerCase());
-
+					System.out.println(new StringBuilder("- ").append(trophees[i].toString().toLowerCase()).toString());
 					musee.donnerTrophees(this, trophees[i]);
 					trophees[i] = null;
 				}

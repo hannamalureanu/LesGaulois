@@ -38,15 +38,12 @@ public class Romain {
 
 	public Equipement[] recevoirCoup(int forceCoup) {
 		Equipement[] equipementEjecte = null;
-
 		forceCoup = calculerResistanceEquipement(forceCoup);
 
 		if (forceCoup > 0) {
 			force -= forceCoup;
-
 			if (force <= 0) {
 				force = 0;
-				//parler("L'équipement de " + nom + " s'envole sous la force du coup.");
 				equipementEjecte = ejecterEquipement();
 				parler("J'abandonne...");
 			} else {
@@ -61,14 +58,15 @@ public class Romain {
 	}
 
 	private int calculerResistanceEquipement(int forceCoup) {
-		String texte = "Ma force est de " + force + ", et la force du coup est de " + forceCoup;
+		StringBuilder texte = new StringBuilder("Ma force est de ");
+		texte.append(force).append(", et la force du coup est de ").append(forceCoup);
 
 		int resistanceEquipement = 0;
-		
-		for (int i = 0; i < nbEquipement; i++){
+
+		for (int i = 0; i < nbEquipement; i++) {
 			Equipement equipement = equipements[i];
 			if (equipement != null) {
-				if (equipement != null && equipement.equals(Equipement.BOUCLIER)) {
+				if (equipement.equals(Equipement.BOUCLIER)) {
 					resistanceEquipement += 6;
 				} else {
 					resistanceEquipement += 3;
@@ -76,19 +74,17 @@ public class Romain {
 			}
 		}
 
-		if (resistanceEquipement > 0) { //string builder
+		if (resistanceEquipement > 0) {
 			if (forceCoup <= resistanceEquipement) {
-				texte += "\nMais heureusement, grâce à mon équipement " + "sa force a été complètement absorbée.";
+				texte.append("\nMais heureusement, grâce à mon équipement sa force a été complètement absorbée.");
 			} else {
-				texte += "\nMais heureusement, grâce à mon équipement " + "sa force a été diminuée de "
-						+ resistanceEquipement + " !";
+				texte.append("\nMais heureusement, grâce à mon équipement sa force a été diminuée de ")
+						.append(resistanceEquipement).append(" !");
 			}
 		}
 
-		parler(texte);
-
+		parler(texte.toString());
 		forceCoup -= resistanceEquipement;
-
 		return forceCoup;
 	}
 
