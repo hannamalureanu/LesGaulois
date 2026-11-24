@@ -113,23 +113,27 @@ public class Romain {
 	}
 
 	public void sEquiper(Equipement equipement) {
-		switch (nbEquipement) {
-		case 0:
-			ajouterEquipement(equipement);
-			break;
+	    switch (nbEquipement) {
+	    case 0:
+	        ajouterEquipement(equipement);
+	        break;
 
-		case 1:
-			if (equipements[0] == equipement) {
-				System.out.println("Le soldat " + nom + " possède déjà un " + equipement + " !");
-			} else {
-				ajouterEquipement(equipement);
-			}
-			break;
+	    case 1:
+	        if (equipements[0] == equipement) {
+	            System.out.println("Le soldat " + nom + " possède déjà un " + equipement + " !");
+	        } else {
+	            ajouterEquipement(equipement);
+	        }
+	        break;
 
-		case 2:
-			System.out.println("Le soldat " + nom + " est déjà bien protégé !");
-			break;
-		}
+	    case 2:
+	        System.out.println("Le soldat " + nom + " est déjà bien protégé !");
+	        break;
+	        
+	    default:
+	        System.out.println("Erreur : nombre d'équipements invalide.");
+	        break;
+	    }
 	}
 
 	private void ajouterEquipement(Equipement equipement) {
